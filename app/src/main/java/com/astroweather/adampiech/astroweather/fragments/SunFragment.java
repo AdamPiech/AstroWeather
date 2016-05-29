@@ -1,4 +1,4 @@
-package com.astroweather.adampiech.astroweather;
+package com.astroweather.adampiech.astroweather.fragments;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.astrocalculator.AstroCalculator;
 import com.astrocalculator.AstroDateTime;
+import com.astroweather.adampiech.astroweather.AstroWeatherValues;
+import com.astroweather.adampiech.astroweather.R;
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
@@ -46,7 +48,6 @@ public class SunFragment extends Fragment {
         }
     };
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_sun, container, false);

@@ -5,10 +5,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.astroweather.adampiech.astroweather.fragments.ActualWeatherFragment;
+import com.astroweather.adampiech.astroweather.fragments.FutherWeatherFragment;
+import com.astroweather.adampiech.astroweather.fragments.MoonFragment;
+import com.astroweather.adampiech.astroweather.fragments.SunFragment;
+import com.astroweather.adampiech.astroweather.fragments.WindFragment;
+
 public class FragmentActivity extends FragmentStatePagerAdapter {
 
     private Configuration conf;
-    private int numberOfFragments = 2;
+    private int numberOfFragments = 5;
     private String fragmentTitle[] = {"Sun Weather", "Moon Weather"};
 
     public FragmentActivity(FragmentManager fragmentManager, Configuration conf) {
@@ -23,6 +29,12 @@ public class FragmentActivity extends FragmentStatePagerAdapter {
                 return new SunFragment();
             case 1:
                 return new MoonFragment();
+            case 2:
+                return new ActualWeatherFragment();
+            case 3:
+                return new WindFragment();
+            case 4:
+                return new FutherWeatherFragment();
         }
         return null;
     }

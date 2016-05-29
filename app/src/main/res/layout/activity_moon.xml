@@ -108,7 +108,7 @@
                     android:id="@+id/textTitleMoonrise"
                     android:layout_weight="1"
                     android:gravity="center_vertical|center_horizontal"
-                    android:textSize="16dp"
+                    android:textSize="15dp"
                     android:textColor="#bdbdbd"/>
 
                 <TextView
@@ -141,7 +141,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:gravity="center_vertical|center_horizontal"
-                    android:textSize="16dp"
+                    android:textSize="15dp"
                     android:textColor="#bdbdbd"/>
 
                 <TextView
@@ -185,7 +185,7 @@
                 android:id="@+id/textTitleNewMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:textColor="#bdbdbd"/>
 
             <TextView
@@ -216,7 +216,7 @@
                 android:id="@+id/textTitleFullMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:textColor="#bdbdbd"/>
 
             <TextView
@@ -256,7 +256,7 @@
                 android:id="@+id/textTitlePhaseOfTheMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:textColor="#bdbdbd"/>
 
             <TextView
@@ -296,7 +296,7 @@
                 android:id="@+id/textTitleDayOfTheMonthSynodical"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:textColor="#bdbdbd"/>
 
             <TextView
