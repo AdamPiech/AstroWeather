@@ -17,10 +17,6 @@ import java.util.Calendar;
 
 public class SunFragment extends Fragment {
 
-    public static int refreshTime = 15;
-    public static double longitude = 1.1;
-    public static double latitude = 2.2;
-
     private Calendar calendar = Calendar.getInstance();
     private DecimalFormat precision = new DecimalFormat("0.00");
 
@@ -39,7 +35,7 @@ public class SunFragment extends Fragment {
     private Runnable infoRunnable = new Runnable() {
         public void run() {
             fillFields();
-            infoHandler.postDelayed(infoRunnable, refreshTime * 60 * 1000);
+            infoHandler.postDelayed(infoRunnable, AstroWeatherValues.refreshTime * 60 * 1000);
         }
     };
     private Runnable timeRunnable = new Runnable() {
@@ -74,8 +70,8 @@ public class SunFragment extends Fragment {
         if (timeView == null || locationView == null) {
             initTimeAndLocation();
         }
-        timeView.setText(calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND));
-        locationView.setText(longitude + "   " + latitude);
+        timeView.setText(String.format("%02d", calendar.get(Calendar.HOUR_OF_DAY)) + ":" + String.format("%02d", calendar.get(Calendar.MINUTE)) + ":" + String.format("%02d", calendar.get(Calendar.SECOND)));
+        locationView.setText(AstroWeatherValues.longitude + "   " + AstroWeatherValues.latitude);
     }
 
     private void fillFields() {
@@ -83,19 +79,19 @@ public class SunFragment extends Fragment {
             initFields();
         }
         AstroDateTime astroDateTime = new AstroDateTime(
-            calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
-            calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.HOUR_OF_DAY),
-            calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND),
-            calendar.get(Calendar.ZONE_OFFSET) / 60 * 60 * 1000, false);
-        AstroCalculator astroCalculator = new AstroCalculator(astroDateTime, new AstroCalculator.Location(longitude, latitude));
+                calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.HOUR_OF_DAY),
+                calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND),
+                calendar.get(Calendar.ZONE_OFFSET) / 60 * 60 * 1000, false);
+        AstroCalculator astroCalculator = new AstroCalculator(astroDateTime, new AstroCalculator.Location(AstroWeatherValues.longitude, AstroWeatherValues.latitude));
         AstroCalculator.SunInfo sunInfo = astroCalculator.getSunInfo();
 
-        timeSunriseView.setText(sunInfo.getSunrise().getHour() + ":" + sunInfo.getSunrise().getMinute() + ":" + sunInfo.getSunrise().getSecond());
+        timeSunriseView.setText(String.format("%02d", sunInfo.getSunrise().getHour()) + ":" + String.format("%02d", sunInfo.getSunrise().getMinute()) + ":" + String.format("%02d", sunInfo.getSunrise().getSecond()));
         coordinateSunriseView.setText(precision.format(sunInfo.getAzimuthRise()));
-        timeSunsetView.setText(sunInfo.getSunset().getHour() + ":" + sunInfo.getSunset().getMinute() + ":" + sunInfo.getSunset().getSecond());
+        timeSunsetView.setText(String.format("%02d", sunInfo.getSunset().getHour()) + ":" + String.format("%02d", sunInfo.getSunset().getMinute()) + ":" + String.format("%02d", sunInfo.getSunset().getSecond()));
         coordinateSunsetView.setText(precision.format(sunInfo.getAzimuthSet()));
-        timeTwilightView.setText(sunInfo.getTwilightEvening().getHour() + ":" + sunInfo.getTwilightEvening().getMinute() + ":" + sunInfo.getTwilightEvening().getSecond());
-        timeDawnView.setText(sunInfo.getTwilightMorning().getHour() + ":" + sunInfo.getTwilightMorning().getMinute() + ":" + sunInfo.getTwilightMorning().getSecond());
+        timeTwilightView.setText(String.format("%02d", sunInfo.getTwilightEvening().getHour()) + ":" + String.format("%02d", sunInfo.getTwilightEvening().getMinute()) + ":" + String.format("%02d", sunInfo.getTwilightEvening().getSecond()));
+        timeDawnView.setText(String.format("%02d", sunInfo.getTwilightMorning().getHour()) + ":" + String.format("%02d", sunInfo.getTwilightMorning().getMinute()) + ":" + String.format("%02d", sunInfo.getTwilightMorning().getSecond()));
     }
 
     @Override

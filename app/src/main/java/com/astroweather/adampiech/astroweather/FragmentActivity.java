@@ -1,7 +1,6 @@
 package com.astroweather.adampiech.astroweather;
 
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -31,7 +30,7 @@ public class FragmentActivity extends FragmentStatePagerAdapter {
     @Override
     public float getPageWidth(int position) {
         float nbPages;
-        if(conf.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+        if (conf.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             nbPages = 2;
         } else {
             nbPages = 1;

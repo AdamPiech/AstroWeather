@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">AstroWeather</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_app">AstroWeather</string>
     <string name="action_settings">Settings</string>
+
+    <string name="longitude_value_name">longitude</string>
+    <string name="latitude_value_name">latitude</string>
+    <string name="refreshTime_value_name">refreshTime</string>
 </resources>

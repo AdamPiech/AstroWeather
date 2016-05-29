@@ -17,10 +17,6 @@ import java.util.Calendar;
 
 public class MoonFragment extends Fragment {
 
-    public static int refreshTime = 15;
-    public static double longitude = 1.1;
-    public static double latitude = 2.2;
-
     private Calendar calendar = Calendar.getInstance();
     private DecimalFormat precision = new DecimalFormat("0");
 
@@ -39,7 +35,7 @@ public class MoonFragment extends Fragment {
     private Runnable infoRunnable = new Runnable() {
         public void run() {
             fillFields();
-            infoHandler.postDelayed(infoRunnable, refreshTime * 60 * 1000);
+            infoHandler.postDelayed(infoRunnable, AstroWeatherValues.refreshTime * 60 * 1000);
         }
     };
     private Runnable timeRunnable = new Runnable() {
@@ -74,8 +70,8 @@ public class MoonFragment extends Fragment {
         if (timeView == null || locationView == null) {
             initTimeAndLocation();
         }
-        timeView.setText(calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND));
-        locationView.setText(longitude + "   " + latitude);
+        timeView.setText(String.format("%02d", calendar.get(Calendar.HOUR_OF_DAY)) + ":" + String.format("%02d", calendar.get(Calendar.MINUTE)) + ":" + String.format("%02d", calendar.get(Calendar.SECOND)));
+        locationView.setText(AstroWeatherValues.longitude + "   " + AstroWeatherValues.latitude);
     }
 
     private void fillFields() {
@@ -87,13 +83,13 @@ public class MoonFragment extends Fragment {
                 calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.HOUR_OF_DAY),
                 calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND),
                 calendar.get(Calendar.ZONE_OFFSET) / 60 * 60 * 1000, false);
-        AstroCalculator astroCalculator = new AstroCalculator(astroDateTime, new AstroCalculator.Location(longitude, latitude));
+        AstroCalculator astroCalculator = new AstroCalculator(astroDateTime, new AstroCalculator.Location(AstroWeatherValues.longitude, AstroWeatherValues.latitude));
         AstroCalculator.MoonInfo moonInfo = astroCalculator.getMoonInfo();
 
-        timeMoonriseView.setText(moonInfo.getMoonrise().getHour() + ":" + moonInfo.getMoonrise().getMinute() + ":" + moonInfo.getMoonrise().getSecond());
-        timeWaneView.setText(moonInfo.getMoonset().getHour() + ":" + moonInfo.getMoonset().getMinute() + ":" + moonInfo.getMoonset().getSecond());
-        dateNewMoonView.setText(moonInfo.getNextNewMoon().getDay() + " - " + moonInfo.getNextNewMoon().getMonth() + " - " + moonInfo.getNextNewMoon().getYear());
-        timeFullMoonView.setText(moonInfo.getNextFullMoon().getDay() + " - " + moonInfo.getNextFullMoon().getMonth() + " - " + moonInfo.getNextFullMoon().getYear());
+        timeMoonriseView.setText(String.format("%02d", moonInfo.getMoonrise().getHour()) + ":" + String.format("%02d", moonInfo.getMoonrise().getMinute()) + ":" + String.format("%02d", moonInfo.getMoonrise().getSecond()));
+        timeWaneView.setText(String.format("%02d", moonInfo.getMoonset().getHour()) + ":" + String.format("%02d", moonInfo.getMoonset().getMinute()) + ":" + String.format("%02d", moonInfo.getMoonset().getSecond()));
+        dateNewMoonView.setText(String.format("%02d", moonInfo.getNextNewMoon().getDay()) + " - " + String.format("%02d", moonInfo.getNextNewMoon().getMonth()) + " - " + moonInfo.getNextNewMoon().getYear());
+        timeFullMoonView.setText(String.format("%02d", moonInfo.getNextFullMoon().getDay()) + " - " + String.format("%02d", moonInfo.getNextFullMoon().getMonth()) + " - " + moonInfo.getNextFullMoon().getYear());
         percentPhaseOfTheMoonView.setText(precision.format(moonInfo.getIllumination() * 100) + "%");
         dayOfTheMonthSynodicalView.setText(precision.format(moonInfo.getAge()));
     }

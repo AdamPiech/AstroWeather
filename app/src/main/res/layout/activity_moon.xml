@@ -4,7 +4,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="5"
-    android:gravity="center_vertical|center_horizontal">
+    android:gravity="center_vertical|center_horizontal"
+    android:background="#263238">
 
     <LinearLayout
         android:orientation="vertical"
@@ -14,16 +15,32 @@
         android:weightSum="3"
         android:gravity="center_vertical|center_horizontal">
 
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Księżyc"
-            android:id="@+id/textTitleMoon"
             android:layout_weight="1"
-            android:layout_gravity="center"
-            android:gravity="center_vertical|center_horizontal"
-            android:textSize="32dp" />
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Księżyc"
+                android:id="@+id/textTitleMoon"
+                android:layout_weight="4"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="32dp"
+                android:textColor="#FFFFFF"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView"
+                android:layout_weight="6"
+                android:src="@mipmap/moon" />/>
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -42,7 +59,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -53,7 +71,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -89,7 +108,8 @@
                     android:id="@+id/textTitleMoonrise"
                     android:layout_weight="1"
                     android:gravity="center_vertical|center_horizontal"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:textColor="#bdbdbd"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -100,7 +120,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:gravity="center_vertical|center_horizontal"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textColor="#FFFFFF"/>
             </LinearLayout>
 
             <LinearLayout
@@ -120,7 +141,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:gravity="center_vertical|center_horizontal"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:textColor="#bdbdbd"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -131,7 +153,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:gravity="center_vertical|center_horizontal"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textColor="#FFFFFF"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -162,7 +185,8 @@
                 android:id="@+id/textTitleNewMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:textColor="#bdbdbd"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -172,7 +196,8 @@
                 android:id="@+id/textDateNewMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
 
         <LinearLayout
@@ -191,7 +216,8 @@
                 android:id="@+id/textTitleFullMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:textColor="#bdbdbd"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -201,7 +227,8 @@
                 android:id="@+id/textTimeFullMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -229,7 +256,8 @@
                 android:id="@+id/textTitlePhaseOfTheMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:textColor="#bdbdbd"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -239,7 +267,8 @@
                 android:id="@+id/textPercentPhaseOfTheMoon"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -267,7 +296,8 @@
                 android:id="@+id/textTitleDayOfTheMonthSynodical"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:textColor="#bdbdbd"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -277,7 +307,8 @@
                 android:id="@+id/textDayOfTheMonthSynodical"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
     </LinearLayout>
 

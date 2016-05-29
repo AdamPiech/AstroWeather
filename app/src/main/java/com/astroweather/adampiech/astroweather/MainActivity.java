@@ -1,28 +1,21 @@
 package com.astroweather.adampiech.astroweather;
 
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-
-import android.os.Handler;
-import android.widget.TextView;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager pager;
 
-    private int refreshTime = 15;
-    private double longitude = 1.1;
-    private double latitude = 2.2;
+    private double latitude = AstroWeatherValues.longitude;
+    private double longitude = AstroWeatherValues.latitude;
+    private int refreshTime = AstroWeatherValues.refreshTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,34 +36,48 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_main) {
-            setContentView(R.layout.activity_main);
-            return true;
-        }
         if (id == R.id.action_settings) {
-            setContentView(R.layout.activity_settings);
-            ((EditText) findViewById(R.id.textRefresh)).setText(String.valueOf(refreshTime));
-            ((EditText) findViewById(R.id.textLongitude)).setText(String.valueOf(longitude));
-            ((EditText) findViewById(R.id.textLatitude)).setText(String.valueOf(latitude));
+            Intent intent = new Intent(this, SettingsActivity.class);
+            intent.putExtra("longitude", longitude);
+            intent.putExtra("latitude", latitude);
+            intent.putExtra("refreshTime", refreshTime);
+            Log.d("DUPA", "4");
+            startActivityForResult(intent, 1);
+            Log.d("DUPA", "5");
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void saveSettings(View view) {
-        refreshTime = Integer.parseInt(((EditText) findViewById(R.id.textRefresh)).getText().toString());
-        longitude = Double.parseDouble(((EditText) findViewById(R.id.textLongitude)).getText().toString());
-        latitude = Double.parseDouble(((EditText) findViewById(R.id.textLatitude)).getText().toString());
-        sendDataOut();
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data != null) {
+            latitude = data.getDoubleExtra("longitude", AstroWeatherValues.latitude);
+            longitude = data.getDoubleExtra("latitude", AstroWeatherValues.longitude);
+            refreshTime = data.getIntExtra("refreshTime", AstroWeatherValues.refreshTime);
+
+            AstroWeatherValues.latitude = latitude;
+            AstroWeatherValues.longitude = longitude;
+            AstroWeatherValues.refreshTime = refreshTime;
+        }
     }
 
-    private void sendDataOut () {
-        SunFragment.refreshTime = refreshTime;
-        SunFragment.longitude = longitude;
-        SunFragment.latitude = latitude;
-        MoonFragment.refreshTime = refreshTime;
-        MoonFragment.longitude = longitude;
-        MoonFragment.latitude = latitude;
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putDouble("longitude", latitude);
+        outState.putDouble("latitude", longitude);
+        outState.putInt("refreshTime", refreshTime);
+        outState.remove("android:support:fragments");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        latitude = savedInstanceState.getDouble("longitude");
+        longitude = savedInstanceState.getDouble("latitude");
+        refreshTime = savedInstanceState.getInt("refreshTime");
     }
 
     @Override
