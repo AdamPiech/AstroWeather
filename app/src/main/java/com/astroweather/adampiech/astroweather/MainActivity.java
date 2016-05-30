@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager pager;
 
-    private double latitude = AstroWeatherValues.longitude;
-    private double longitude = AstroWeatherValues.latitude;
+    private double longitude = AstroWeatherValues.longitude;
+    private double latitude = AstroWeatherValues.latitude;
     private int refreshTime = AstroWeatherValues.refreshTime;
 
     @Override
@@ -41,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("longitude", longitude);
             intent.putExtra("latitude", latitude);
             intent.putExtra("refreshTime", refreshTime);
-            Log.d("DUPA", "4");
             startActivityForResult(intent, 1);
-            Log.d("DUPA", "5");
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -53,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (data != null) {
-            latitude = data.getDoubleExtra("longitude", AstroWeatherValues.latitude);
-            longitude = data.getDoubleExtra("latitude", AstroWeatherValues.longitude);
+            latitude = data.getDoubleExtra("latitude", AstroWeatherValues.latitude);
+            longitude = data.getDoubleExtra("longitude", AstroWeatherValues.longitude);
             refreshTime = data.getIntExtra("refreshTime", AstroWeatherValues.refreshTime);
 
             AstroWeatherValues.latitude = latitude;
@@ -66,17 +64,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putDouble("longitude", latitude);
-        outState.putDouble("latitude", longitude);
+        outState.putDouble("latitude", latitude);
+        outState.putDouble("longitude", longitude);
         outState.putInt("refreshTime", refreshTime);
         outState.remove("android:support:fragments");
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        latitude = savedInstanceState.getDouble("longitude");
-        longitude = savedInstanceState.getDouble("latitude");
+//        super.onRestoreInstanceState(savedInstanceState);
+        longitude = savedInstanceState.getDouble("longitude");
+        latitude = savedInstanceState.getDouble("latitude");
         refreshTime = savedInstanceState.getInt("refreshTime");
     }
 

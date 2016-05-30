@@ -83,8 +83,8 @@ public class MoonFragment extends Fragment {
                 calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.HOUR_OF_DAY),
                 calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND),
-                calendar.get(Calendar.ZONE_OFFSET) / 60 * 60 * 1000, false);
-        AstroCalculator astroCalculator = new AstroCalculator(astroDateTime, new AstroCalculator.Location(AstroWeatherValues.longitude, AstroWeatherValues.latitude));
+                calendar.get(Calendar.ZONE_OFFSET) / (60 * 60 * 1000), true);
+        AstroCalculator astroCalculator = new AstroCalculator(astroDateTime, new AstroCalculator.Location(AstroWeatherValues.latitude, AstroWeatherValues.longitude));
         AstroCalculator.MoonInfo moonInfo = astroCalculator.getMoonInfo();
 
         timeMoonriseView.setText(String.format("%02d", moonInfo.getMoonrise().getHour()) + ":" + String.format("%02d", moonInfo.getMoonrise().getMinute()) + ":" + String.format("%02d", moonInfo.getMoonrise().getSecond()));

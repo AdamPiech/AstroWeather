@@ -25,16 +25,16 @@ public class SettingsActivity extends AppCompatActivity {
         latitudeView = (EditText) findViewById(R.id.textLatitude);
         refreshRateView = (EditText) findViewById(R.id.textRefresh);
 
-        longitudeView.setText(precision.format(getIntent().getDoubleExtra("longitude", AstroWeatherValues.longitude)));
-        latitudeView.setText(precision.format(getIntent().getDoubleExtra("latitude", AstroWeatherValues.latitude)));
+        longitudeView.setText(precision.format(getIntent().getDoubleExtra("longitude", AstroWeatherValues.longitude)).replace(",", "."));
+        latitudeView.setText(precision.format(getIntent().getDoubleExtra("latitude", AstroWeatherValues.latitude)).replace(",", "."));
         refreshRateView.setText(String.format("%d", getIntent().getIntExtra("refreshTime", AstroWeatherValues.refreshTime)));
     }
 
     public void saveSettings(View view) {
         Intent intentResult = new Intent();
-        intentResult.putExtra("longitude", Double.valueOf(longitudeView.getText().toString()));
-        intentResult.putExtra("latitude", Double.valueOf(latitudeView.getText().toString()));
-        intentResult.putExtra("refreshTime", Integer.valueOf(refreshRateView.getText().toString()));
+        intentResult.putExtra("longitude", Double.valueOf(longitudeView.getText().toString().replace(",", ".")));
+        intentResult.putExtra("latitude", Double.valueOf(latitudeView.getText().toString().replace(",", ".")));
+        intentResult.putExtra("refreshTime", Integer.valueOf(refreshRateView.getText().toString().replace(",", ".")));
         setResult(1, intentResult);
         finish();
     }
