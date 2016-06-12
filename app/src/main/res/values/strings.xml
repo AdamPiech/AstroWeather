@@ -11,9 +11,9 @@
 <string name="outdated_weather_data_info">Informacje o pogodzie mogą być nie aktualne!</string>
 <string name="no_weather_data_info">Nie można pobrać informacji o pogodzie!</string>
 
-<string-array name="degrees">
-    <item>Calcjusza</item>
-    <item>Fahrenheita</item>
+<string-array name="system">
+    <item>Metryczny</item>
+    <item>Imperialny</item>
 </string-array>
 
 <string-array name="localizations">

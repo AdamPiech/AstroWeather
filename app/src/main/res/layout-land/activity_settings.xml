@@ -201,11 +201,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Stopnie:"
+                        android:text="System:"
                         android:gravity="left|center_vertical"
                         android:layout_weight="6"
                         android:textSize="16dp"
-                        android:layout_gravity="left" />
+                        android:layout_gravity="left"/>
 
                     <Spinner
                         android:id="@+id/spinnerDegrees"

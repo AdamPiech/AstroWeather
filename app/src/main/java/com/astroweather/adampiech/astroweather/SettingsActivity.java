@@ -38,7 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         degreesList = (Spinner) findViewById(R.id.spinnerDegrees);
         ArrayAdapter<CharSequence> degreesAdapter = ArrayAdapter.createFromResource(this,
-                R.array.degrees, android.R.layout.simple_spinner_item);
+                R.array.system, android.R.layout.simple_spinner_item);
         degreesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         degreesList.setAdapter(degreesAdapter);
 

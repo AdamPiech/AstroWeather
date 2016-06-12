@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
         PagerAdapter pagerAdapter = new FragmentActivity(getSupportFragmentManager(), getResources().getConfiguration());
         pager.setAdapter(pagerAdapter);
 
-        if(isOnline(getApplicationContext())) {
-            showWarningNoInternetConnection();
-        }
+    //    if(isOnline(getApplicationContext())) {
+    //        showWarningNoInternetConnection();
+    //    }
     }
 
     @Override
