@@ -2,7 +2,6 @@ package com.astroweather.adampiech.astroweather.fragments;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 import com.astrocalculator.AstroCalculator;
 import com.astrocalculator.AstroDateTime;
-import com.astroweather.adampiech.astroweather.AstroWeatherValues;
+import com.astroweather.adampiech.astroweather.util.AstroWeatherValues;
 import com.astroweather.adampiech.astroweather.R;
 
 import java.text.DecimalFormat;

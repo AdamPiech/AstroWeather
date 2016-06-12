@@ -1,10 +1,24 @@
 <resources>
-    <string name="app_name">AstroWeather</string>
+<string name="app_name">AstroWeather</string>
 
-    <string name="action_app">AstroWeather</string>
-    <string name="action_settings">Settings</string>
+<string name="action_app">AstroWeather</string>
+<string name="action_settings">Settings</string>
 
-    <string name="longitude_value_name">longitude</string>
-    <string name="latitude_value_name">latitude</string>
-    <string name="refreshTime_value_name">refreshTime</string>
+<string name="longitude_value_name">longitude</string>
+<string name="latitude_value_name">latitude</string>
+<string name="refreshTime_value_name">refreshTime</string>
+
+<string name="outdated_weather_data_info">Informacje o pogodzie mogą być nie aktualne!</string>
+<string name="no_weather_data_info">Nie można pobrać informacji o pogodzie!</string>
+
+<string-array name="degrees">
+    <item>Calcjusza</item>
+    <item>Fahrenheita</item>
+</string-array>
+
+<string-array name="localizations">
+    <item>lodz, pl</item>
+</string-array>
 </resources>
+
+
