@@ -31,7 +31,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#000000"
-            android:textSize="42dp"/>
+            android:textSize="52dp"/>
 
     </LinearLayout>
 
@@ -51,7 +51,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#212121"
-            android:textSize="28dp"/>
+            android:textSize="38dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#000000"
-            android:textSize="28dp"/>
+            android:textSize="38dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -82,7 +82,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#212121"
-            android:textSize="28dp"/>
+            android:textSize="38dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +94,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#000000"
-            android:textSize="28dp"/>
+            android:textSize="38dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -113,7 +113,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#212121"
-            android:textSize="28dp"/>
+            android:textSize="38dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -125,7 +125,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#000000"
-            android:textSize="28dp"/>
+            android:textSize="38dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -144,7 +144,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#212121"
-            android:textSize="28dp"/>
+            android:textSize="38dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -156,6 +156,6 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:textColor="#000000"
-            android:textSize="28dp"/>
+            android:textSize="38dp"/>
     </LinearLayout>
 </LinearLayout>
