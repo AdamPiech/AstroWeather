@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:weightSum="1"
     android:gravity="center_vertical|center_horizontal"
-    android:background="#0277bd">
+    android:background="#039be5">
 
     <LinearLayout
         android:orientation="vertical"
@@ -77,7 +77,7 @@
                 android:id="@+id/imageWeather"
                 android:src="@drawable/img_code3200"
                 android:layout_weight="1"
-                android:background="#0277bd"
+                android:background="#039be5"
                 android:scaleType="centerInside" />
 
             <LinearLayout

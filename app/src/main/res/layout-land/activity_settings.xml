@@ -181,8 +181,8 @@
                         android:textSize="16dp"
                         android:layout_gravity="left" />
 
-                    <Spinner
-                        android:id="@+id/spinnerLocalization"
+                    <AutoCompleteTextView
+                        android:id="@+id/localizationTextView"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4" />

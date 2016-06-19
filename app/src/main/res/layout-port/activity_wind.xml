@@ -4,8 +4,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:weightSum="14"
-    android:gravity="center_vertical|center_horizontal"
-    android:background="#0277bd">
+    android:gravity="left|center_vertical"
+    android:background="#0288d1">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -46,12 +46,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Siła:"
+            android:text="   Siła:"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center_vertical|center_horizontal"
+            android:gravity="left|center_vertical"
             android:textColor="#212121"
-            android:textSize="28dp"/>
+            android:textSize="28dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -77,12 +77,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Kierunek:"
+            android:text="   Kierunek:"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center_vertical|center_horizontal"
+            android:gravity="left|center_vertical"
             android:textColor="#212121"
-            android:textSize="28dp"/>
+            android:textSize="28dp"  />
 
         <TextView
             android:layout_width="wrap_content"
@@ -108,12 +108,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Wilgotność:"
+            android:text="   Wilgotność:"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center_vertical|center_horizontal"
+            android:gravity="left|center_vertical"
             android:textColor="#212121"
-            android:textSize="28dp"/>
+            android:textSize="28dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -139,12 +139,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Widoczność:"
+            android:text="   Widoczność:"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center_vertical|center_horizontal"
+            android:gravity="left|center_vertical"
             android:textColor="#212121"
-            android:textSize="28dp"/>
+            android:textSize="28dp" />
 
         <TextView
             android:layout_width="wrap_content"
