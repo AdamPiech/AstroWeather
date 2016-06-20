@@ -34,7 +34,7 @@ public class Localizations implements Serializable {
     public String[] getArray() {
         String[] strings = new String[localizations.size()];
         for (int i = 0; i < localizations.size(); i++) {
-            strings[0] = localizations.get(i).toString();
+            strings[i] = localizations.get(i).toString();
         }
         return strings;
     }

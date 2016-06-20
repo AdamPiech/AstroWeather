@@ -60,6 +60,9 @@ public class SettingsActivity extends AppCompatActivity {
         if (localizationList.getText().toString().matches("^.*(, ){1}.*$")) {
             intentResult.putExtra(String.valueOf(R.string.city_value_name), localizationList.getText().toString().split(", ")[0]);
             intentResult.putExtra(String.valueOf(R.string.country_value_name), localizationList.getText().toString().split(", ")[1]);
+        } else if (localizationList.getText().toString().matches("^.*$")) {
+            intentResult.putExtra(String.valueOf(R.string.city_value_name), localizationList.getText().toString());
+            intentResult.putExtra(String.valueOf(R.string.country_value_name), "");
         } else {
             intentResult.putExtra(String.valueOf(R.string.city_value_name), AstroWeatherValues.actualLocalization.getCity().substring(0));
             intentResult.putExtra(String.valueOf(R.string.country_value_name), AstroWeatherValues.actualLocalization.getCountry().substring(0));
@@ -74,15 +77,4 @@ public class SettingsActivity extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        localizationAdapter =  new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, AstroWeatherValues.localizations.getArray());
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        localizationAdapter.clear();
-    }
 }
